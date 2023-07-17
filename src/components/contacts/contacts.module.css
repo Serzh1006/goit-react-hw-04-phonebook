@@ -1,0 +1,39 @@
+.contactsList {
+  margin-left: 15px;
+  margin-top: 20px;
+  width: 320px;
+  padding: 5px;
+  list-style: none;
+}
+
+.contactsItem {
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(24, 24, 88);
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  height: 30px;
+  padding: 3px;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  background-color: rgba(207, 164, 108, 0.4);
+}
+
+.btnDelete {
+  padding: 5px 10px 5px;
+  border: none;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: rgba(182, 7, 7, 0.8);
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.btnDelete:hover,
+.btnDelete:focus {
+  background-color: rgb(116, 12, 12);
+  cursor: pointer;
+}
