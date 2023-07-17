@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-// import { Formik } from 'formik';
-// import * as yup from 'yup';
 
 import Contacts from './contacts';
 import PhoneBook from './phonebook';
@@ -35,18 +33,17 @@ export class App extends Component {
     this.setState({ [name]: value });
   };
 
-  addContact = dataContact => {
+  addContact = (nameUser, number) => {
     const findName = this.state.contacts.find(
-      contact => contact.name === dataContact.name
+      contact => contact.nameUser === nameUser
     );
     if (findName !== undefined) {
-      alert(`${findName.name} is already in contacts`);
+      alert(`${findName.nameUser} is already in contacts`);
       return;
     } else {
-      const { name, number } = dataContact;
       const newContact = {
         id: nanoid(),
-        name,
+        nameUser,
         number,
       };
       this.setState(prevState => ({
@@ -65,7 +62,7 @@ export class App extends Component {
     const { contacts, filter } = this.state;
     const normilizedFilter = filter.toLowerCase();
     const filterContacts = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(normilizedFilter)
+      contact.nameUser.toLowerCase().includes(normilizedFilter)
     );
 
     return (
